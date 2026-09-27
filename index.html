@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Noto+Naskh+Arabic:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./style.css?v=20260927-1">
+  <link rel="stylesheet" href="./style.css?v=20260927-2">
 </head>
 <body>
   <div class="shell">
@@ -18,7 +18,7 @@
       <a class="brand" href="#inicio" aria-label="Libellus"><span class="brand-mark">L<span>.</span></span><span>LIBELLUS</span></a>
       <nav class="header-nav" aria-label="Navegación principal">
         <a href="#libros" data-i18n="navBooks">Libros</a>
-        <a href="#bizum" data-i18n="navBizum">Bizum</a>
+        <a href="#bizum" data-i18n="navBizum">Comprar</a>
         <a href="#acerca" data-i18n="navAbout">El proyecto</a>
       </nav>
       <div class="language-wrap"><label class="sr-only" for="language" data-i18n="languageLabel">Idioma</label><select id="language" aria-label="Idioma"><option value="es">Español</option><option value="ca">Català</option><option value="fr">Français</option><option value="en">English</option><option value="ar">العربية</option></select></div>
@@ -46,8 +46,16 @@
       </section>
 
       <section class="bizum" id="bizum" aria-labelledby="bizum-heading">
-        <div><p class="eyebrow" data-i18n="bizumEyebrow">COMPRA EN ESPAÑA</p><h2 id="bizum-heading" data-i18n="bizumTitle">Paga por Bizum</h2></div>
-        <div class="bizum-details"><p data-i18n="bizumInstructions">Envía 13,57 € por libro al número indicado. Escribe el título del libro en el concepto y envía un SMS al mismo número con el título y tu dirección de correo electrónico. Recibirás el PDF por correo después de comprobar el pago.</p><a class="bizum-number" href="tel:+34666854409" dir="ltr">+34 666 85 44 09</a><p class="order-email"><span data-i18n="orderEmailLabel">Correo para confirmar el pedido</span> : <a href="mailto:naji.brigui@gmail.com">naji.brigui@gmail.com</a></p><p class="bizum-note" data-i18n="bizumNote">Pago disponible en España. La entrega se realiza tras la verificación manual del Bizum; no es inmediata.</p></div>
+        <div><p class="eyebrow" data-i18n="bizumEyebrow">CÓMO COMPRAR</p><h2 id="bizum-heading" data-i18n="bizumTitle">Pago y entrega</h2></div>
+        <div class="bizum-details">
+          <p data-i18n="bizumInstructions">En España, paga 13,57 € por libro disponible mediante Bizum al número indicado e incluye el título en el concepto del pago.</p>
+          <a class="bizum-number" href="tel:+34666854409" dir="ltr">+34 666 85 44 09</a>
+          <p class="bank-instructions" data-i18n="bankInstructions">Desde cualquier país, también puedes pagar 13,57 € por libro mediante transferencia bancaria al IBAN indicado. Incluye el título en el concepto.</p>
+          <p class="bank-account"><span>IBAN</span> <strong dir="ltr">ES67 2100 0418 4702 0127 0277</strong></p>
+          <p class="confirmation-instructions" data-i18n="confirmationInstructions">Después del pago, confirma tu pedido por correo electrónico, WhatsApp o SMS al mismo número. Indica el título y tu dirección de correo para recibir el PDF.</p>
+          <p class="order-email"><span data-i18n="orderEmailLabel">Correo para confirmar el pedido</span> : <a href="mailto:naji.brigui@gmail.com">naji.brigui@gmail.com</a></p>
+          <p class="bizum-note" data-i18n="bizumNote">El PDF se envía por correo electrónico tras comprobar el pago; la entrega no es inmediata.</p>
+        </div>
       </section>
 
       <section class="about" id="acerca" aria-labelledby="about-heading">
@@ -61,8 +69,8 @@
 
   <dialog id="book-dialog" aria-labelledby="dialog-title">
     <button class="close-dialog" id="close-dialog" aria-label="Cerrar">×</button>
-    <div class="dialog-inner"><div class="dialog-cover-wrap"><img id="dialog-cover" src="" alt=""><div class="cover-actions"><button class="cover-toggle" id="cover-toggle" type="button" hidden></button><a id="cover-open" target="_blank" rel="noopener noreferrer">Ampliar ↗</a></div></div><div class="dialog-content"><p class="eyebrow" id="dialog-status"></p><h2 id="dialog-title"></h2><p class="dialog-subtitle" id="dialog-subtitle"></p><p class="dialog-author">Naji Brigui</p><div class="dialog-rule"></div><p id="dialog-description"></p><p class="dialog-price">13,57 €</p><p class="availability" id="dialog-availability"></p><a class="dialog-bizum" href="tel:+34666854409" dir="ltr">+34 666 85 44 09</a></div></div>
+    <div class="dialog-inner"><div class="dialog-cover-wrap"><img id="dialog-cover" src="" alt=""><div class="cover-actions"><button class="cover-toggle" id="cover-toggle" type="button" hidden></button><a id="cover-open" target="_blank" rel="noopener noreferrer">Ampliar ↗</a></div></div><div class="dialog-content"><p class="eyebrow" id="dialog-status"></p><h2 id="dialog-title"></h2><p class="dialog-subtitle" id="dialog-subtitle"></p><p class="dialog-author">Naji Brigui</p><div class="dialog-rule"></div><p id="dialog-description"></p><p class="dialog-price">13,57 €</p><p class="availability" id="dialog-availability"></p><div class="dialog-payment-contacts" id="dialog-payment-contacts"><a class="dialog-bizum" href="tel:+34666854409" dir="ltr">+34 666 85 44 09</a><a href="mailto:naji.brigui@gmail.com">naji.brigui@gmail.com</a><p class="dialog-bank"><span>IBAN</span> <strong dir="ltr">ES67 2100 0418 4702 0127 0277</strong></p></div></div></div>
   </dialog>
-  <script src="./script.js?v=20260927-2" defer></script>
+  <script src="./script.js?v=20260927-3" defer></script>
 </body>
 </html>
