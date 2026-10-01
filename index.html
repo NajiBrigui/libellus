@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Noto+Naskh+Arabic:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./style.css?v=20260928-1">
+  <link rel="stylesheet" href="./style.css?v=20261001-1">
 </head>
 <body>
   <div class="shell">
@@ -19,6 +19,7 @@
       <nav class="header-nav" aria-label="Navegación principal">
         <a href="#libros" data-i18n="navBooks">Libros</a>
         <a href="#bizum" data-i18n="navBizum">Comprar</a>
+        <a href="#opiniones" data-i18n="navReviews">Opiniones</a>
         <a href="#acerca" data-i18n="navAbout">El proyecto</a>
       </nav>
       <div class="language-wrap"><label class="sr-only" for="language" data-i18n="languageLabel">Idioma</label><select id="language" aria-label="Idioma"><option value="es">Español</option><option value="ca">Català</option><option value="fr">Français</option><option value="en">English</option><option value="ar">العربية</option></select></div>
@@ -41,7 +42,7 @@
       </section>
 
       <section class="catalog" id="libros" aria-labelledby="catalog-heading">
-        <div class="section-heading"><div><p class="eyebrow" data-i18n="collectionEyebrow">LA COLECCIÓN</p><h2 id="catalog-heading" data-i18n="collectionTitle">Obras de Naji Brigui</h2></div><p class="section-note" data-i18n="collectionNote">Ocho ediciones disponibles en PDF y dos obras en preparación · 13,57 € por libro disponible.</p></div>
+        <div class="section-heading"><div><p class="eyebrow" data-i18n="collectionEyebrow">LA COLECCIÓN</p><h2 id="catalog-heading" data-i18n="collectionTitle">Obras de Naji Brigui</h2></div><p class="section-note" data-i18n="collectionNote">Nueve ediciones disponibles en PDF y dos obras en proceso de realización · 13,57 € por libro disponible.</p></div>
         <div class="book-grid" id="book-grid"></div>
       </section>
 
@@ -58,19 +59,71 @@
         </div>
       </section>
 
+      <section class="reviews" id="opiniones" aria-labelledby="reviews-heading">
+        <div class="reviews-heading">
+          <p class="eyebrow" data-i18n="reviewsEyebrow">OPINIONES DE LOS LECTORES</p>
+          <h2 id="reviews-heading" data-i18n="reviewsTitle">Comparte tu lectura</h2>
+          <p data-i18n="reviewsIntro">Si has leído uno de los libros publicados, puedes dejar una reseña. Los mensajes se envían al autor y solo se publican después de su validación.</p>
+        </div>
+        <form class="review-form" action="https://formsubmit.co/naji.brigui@gmail.com" method="POST">
+          <input type="hidden" name="_subject" value="Nueva reseña en Libellus">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_next" value="https://najibrigui.github.io/libellus/gracias.html">
+          <input type="text" name="_honey" class="review-honey" tabindex="-1" autocomplete="off">
+          <div class="form-row">
+            <label><span data-i18n="reviewNameLabel">Nombre o pseudónimo</span><input type="text" name="Nombre_o_pseudonimo" maxlength="80" required></label>
+            <label><span data-i18n="reviewEmailLabel">Correo electrónico (no se publicará)</span><input type="email" name="Email" maxlength="160"></label>
+          </div>
+          <div class="form-row">
+            <label><span data-i18n="reviewBookLabel">Libro</span>
+              <select name="Libro" required>
+                <option value="">—</option>
+                <option>Lo que guardan los muros</option>
+                <option>Ce que gardent les murs</option>
+                <option>La geometría del silencio</option>
+                <option>Una mujer velada pide la luz</option>
+                <option>El algoritmo de la quema</option>
+                <option>La parte de la sal</option>
+                <option>La part du sel</option>
+                <option>La luz y el velo</option>
+                <option>La herencia incómoda</option>
+              </select>
+            </label>
+            <label><span data-i18n="reviewRatingLabel">Valoración</span>
+              <select name="Valoracion" required>
+                <option value="">—</option>
+                <option value="5">★★★★★ · 5/5</option>
+                <option value="4">★★★★☆ · 4/5</option>
+                <option value="3">★★★☆☆ · 3/5</option>
+                <option value="2">★★☆☆☆ · 2/5</option>
+                <option value="1">★☆☆☆☆ · 1/5</option>
+              </select>
+            </label>
+          </div>
+          <label><span data-i18n="reviewTextLabel">Tu reseña</span><textarea name="Resena" rows="6" maxlength="2500" required></textarea></label>
+          <label class="consent"><input type="checkbox" name="Autorizacion_publicacion" value="Sí" required><span data-i18n="reviewConsent">Acepto que mi nombre o pseudónimo, mi valoración y mi reseña puedan publicarse en Libellus después de la moderación.</span></label>
+          <p class="review-privacy" data-i18n="reviewPrivacy">El correo electrónico se utiliza únicamente para gestionar la reseña y no se publica.</p>
+          <button class="review-submit" type="submit" data-i18n="reviewSubmit">Enviar reseña</button>
+        </form>
+        <div class="published-reviews">
+          <h3 data-i18n="publishedReviewsTitle">Reseñas publicadas</h3>
+          <p data-i18n="noReviewsYet">Aún no hay reseñas publicadas. Las primeras aparecerán aquí después de su validación.</p>
+        </div>
+      </section>
+
       <section class="about" id="acerca" aria-labelledby="about-heading">
         <div class="about-symbol" aria-hidden="true">L.</div>
         <div><p class="eyebrow" data-i18n="aboutEyebrow">ACERCA DE LIBELLUS</p><h2 id="about-heading" data-i18n="aboutTitle">Una librería que empieza por sus historias.</h2></div>
         <div class="about-copy"><p data-i18n="aboutBody">Libellus nace para reunir los libros digitales de Naji Brigui. A medida que se publiquen, encontrarás aquí sus ediciones en PDF y la información para adquirirlas.</p><p data-i18n="aboutFuture">El catálogo podrá crecer con otras obras cuya distribución esté autorizada.</p></div>
       </section>
     </main>
-    <footer><span class="footer-brand">LIBELLUS</span><span data-i18n="footer">Libros digitales · Naji Brigui</span><a href="#inicio" data-i18n="backTop">Volver arriba ↑</a></footer>
+    <footer><span class="footer-brand">LIBELLUS</span><span data-i18n="footer">Libros digitales · Naji Brigui</span><span class="visit-counter"><span data-i18n="visitCounterLabel">Visitas</span> <a href="https://hits.sh/najibrigui.github.io/libellus/" target="_blank" rel="noopener noreferrer"><img alt="Contador de visitas" src="https://hits.sh/najibrigui.github.io/libellus.svg?style=flat-square&label=Libellus&color=d9ad73&labelColor=101b25"></a></span><a href="#inicio" data-i18n="backTop">Volver arriba ↑</a></footer>
   </div>
 
   <dialog id="book-dialog" aria-labelledby="dialog-title">
     <button class="close-dialog" id="close-dialog" aria-label="Cerrar">×</button>
     <div class="dialog-inner"><div class="dialog-cover-wrap"><img id="dialog-cover" src="" alt=""><div class="cover-actions"><button class="cover-toggle" id="cover-toggle" type="button" hidden></button><a id="cover-open" target="_blank" rel="noopener noreferrer">Ampliar ↗</a></div></div><div class="dialog-content"><p class="eyebrow" id="dialog-status"></p><h2 id="dialog-title"></h2><p class="dialog-subtitle" id="dialog-subtitle"></p><p class="dialog-author">Naji Brigui</p><div class="dialog-rule"></div><p id="dialog-description"></p><p class="dialog-price">13,57 €</p><p class="availability" id="dialog-availability"></p><div class="dialog-payment-contacts" id="dialog-payment-contacts"><a class="dialog-bizum" href="tel:+34666854409" dir="ltr">+34 666 85 44 09</a><a href="mailto:naji.brigui@gmail.com">naji.brigui@gmail.com</a><p class="dialog-bank"><span>IBAN</span> <strong dir="ltr">ES67 2100 0418 4702 0127 0277</strong></p></div></div></div>
   </dialog>
-  <script src="./script.js?v=20260928-1" defer></script>
+  <script src="./script.js?v=20261001-1" defer></script>
 </body>
 </html>
