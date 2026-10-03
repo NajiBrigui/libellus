@@ -2,7 +2,7 @@ const books = [
   {id:'muros',title:'Lo que guardan los muros',subtitle:'Memoria morisca entre dos orillas . 404 páginas',image:'./assets/muros.webp'},
   {id:'murs_fr',title:'Ce que gardent les murs',subtitle:'Mémoire morisque entre deux rives · Français . 274 pages',image:'./assets/murs-fr.webp',backImage:'./assets/murs-fr-back.webp'},
   {id:'geometria',title:'La geometría del silencio',subtitle:'El hilo de las tres luces . 194 páginas',image:'./assets/geometria.webp'},
-  {id:'mujer',title:'Una mujer velada pide la luz',subtitle:'367 páginas',image:'./assets/mujer.webp'},
+  {id:'mujer',title:'Una mujer velada pide la luz',subtitle:'367 páginas',image:'./assets/mujer.webp',backImage:'./assets/mujer-back.webp?v=20261003'},
   {id:'algoritmo',title:'El algoritmo de la quema',subtitle:'183 páginas',image:'./assets/algoritmo.webp'},
   {id:'sal_es',title:'La parte de la sal',subtitle:'Español . 160 páginas',image:'./assets/sal-es.webp'},
   {id:'sal_fr',title:'La part du sel',subtitle:'Français . 170 pages',image:'./assets/sal-fr.webp'},
